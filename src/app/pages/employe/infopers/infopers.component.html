@@ -1,0 +1,458 @@
+<div class="container-fluid">
+    <div class="checkout-tabs">
+      <div class="row">
+        <div class="col-xl-2 col-sm-3">
+          <ul ngbNav #nav="ngbNav" [activeId]="1" class="nav-pills flex-column">
+            <li [ngbNavItem]="1">
+              <a ngbNavLink>
+                <i class="bx bxs-user d-block check-nav-icon mt-4 mb-2"></i>
+                <p class="fw-bold mb-4">Identite</p>
+              </a>
+              <ng-template ngbNavContent>
+                <div class="container-fluid">
+                  <!-- start page title -->
+  
+                  <!-- end page title -->
+  
+                  <div class="row">
+                    <div class="col-12">
+                      <div class="card">
+                        <div class="card-body">
+                          <h1 class="card-title">Consultation Employee </h1> <h4 style=color:#2a3042;> Matricule: {{perso11.mat_pers}}</h4>
+                          <p class="card-title-desc"> information </p>
+  
+                          <form>
+                            <div class="row">
+                              <div class="col-sm-6">
+                                <div class="mb-3">
+                                  <label for="productname">Nom</label>
+                                  <input
+                                    [value]="perso11.nom_pers"
+                                    id="productname"
+                                    name="productname"
+                                    type="text"
+                                    class="form-control"
+                                  />
+                                </div>
+                                <div class="mb-3">
+                                  <label for="manufacturername">Prenom</label>
+                                  <input
+                                    [value]="perso11.pren_pers"
+                                    id="manufacturername"
+                                    name="manufacturername"
+                                    type="text"
+                                    class="form-control"
+                                  />
+                                </div>
+                                <div class="mb-3">
+                                  <label for="manufacturerbrand">Lieu emission identité</label>
+                                  <input
+                                    id="manufacturerbrand"
+                                    [value]="perso11.lie_emi_cin"
+                                    name="manufacturerbrand"
+                                    type="text"
+                                    class="form-control"
+                                  />
+                                </div>
+  
+                                  <div class="mb-3">
+                                    <label for="price">Etat paie</label>
+                                    <input
+                                      [value]="perso11.lib_etat_act"
+                                      type="text"
+                                      class="form-control"
+                                    />
+                                    <div class="invalid-feedback"></div>
+                                  </div>
+                                  <div class="mb-3">
+                                    <label for="manufacturerbrand">Date de Naissance</label>
+                                    <input
+                                      id="manufacturerbrand"
+                                      [value]="perso11.dat_nais"
+                                      name="manufacturerbrand"
+                                      type="text"
+                                      class="form-control"
+                                    />
+                                  </div>
+  
+  
+  
+  
+  
+                              </div>
+  
+                              <div class="col-sm-6">
+                                <div class="mb-3">
+                                  <label class="control-label">Nom 2emé langue</label>
+                                  <input
+                                    id="manufacturerbrand"
+                                    [value]="perso11.nom_pers_a"
+                                    name="manufacturerbrand"
+                                    type="text"
+                                    class="form-control"
+                                  />
+                                </div>
+                                <div class="mb-3">
+                                  <label class="control-label">Prenom 2éme langue</label>
+                                  <input
+                                  id="manufacturerbrand"
+                                  [value]="perso11.pren_pers_a"
+                                  name="manufacturerbrand"
+                                  type="text"
+                                  class="form-control"
+                                />
+                                </div>
+                                <div class="mb-3">
+                                  <label for="manufacturerbrand">N identité
+                                  </label>
+                                  <input
+                                    id="manufacturerbrand"
+                                    [value]="perso11.cin"
+                                    name="manufacturerbrand"
+                                    type="text"
+                                    class="form-control"
+                                  />
+                                </div>
+                                <div class="mb-3">
+                                  <label for="manufacturerbrand">Nationalité</label>
+                                  <input
+                                    id="manufacturerbrand"
+                                    [value]="perso11.lib_gouv"
+                                    name="manufacturerbrand"
+                                    type="text"
+                                    class="form-control"
+                                  />
+                                </div>
+                                <div class="mb-3">
+                                  <label for="manufacturerbrand">Lieu de Naissance</label>
+                                  <input
+                                    id="manufacturerbrand"
+                                    [value]="perso11.lieu_nais"
+                                    name="manufacturerbrand"
+                                    type="text"
+                                    class="form-control"
+                                  />
+                                </div>
+  
+  
+                              </div>
+  
+                            </div>
+                            <div class="d-flex flex-wrap gap-2 mt-2">
+  
+  
+                            </div>
+                          </form>
+                        </div>
+                      </div>
+  
+                      <div class="card">
+                        <div class="card-body">
+  
+  
+                          <form>
+                            <div class="row">
+                              <div class="col-sm-6">
+                                <div class="mb-3">
+                                  <label for="metatitle">Service Militaie</label>
+                                  <input
+                                  [value]="perso11.lib_mil"
+                                    id="metatitle"
+                                    name="productname"
+                                    type="text"
+                                    class="form-control"
+                                  />
+                                </div>
+                                <div class="mb-3">
+                                  <label for="metakeywords">Groupe sanguin</label>
+                                  <input
+                                    id="metakeywords"
+                                    [value]="perso11.grp_sang"
+                                    name="manufacturername"
+                                    type="text"
+                                    class="form-control"
+                                  />
+                                </div>
+                              </div>
+  
+                              <div class="col-sm-6">
+                                <div   *ngIf="perso11.presum_nais=='O'"class="mb-3">
+                                  <label for="metadescription">Presum Nais
+                                  </label>
+                                  <input
+                                  id="metakeywords"
+                                  value="Oui"
+                                  name="manufacturername"
+                                  type="text"
+                                  class="form-control"
+                                />
+                                </div>
+                                <div   *ngIf="perso11.presum_nais=='N'"class="mb-3">
+                                  <label for="metadescription">Presum Nais
+                                  </label>
+                                  <input
+                                  id="metakeywords"
+                                  value="Non"
+                                  name="manufacturername"
+                                  type="text"
+                                  class="form-control"
+                                />
+                                </div>
+                                <div   *ngIf="perso11.presum_nais==null"class="mb-3">
+                                  <label for="metadescription">Presum Nais
+                                  </label>
+                                  <input
+                                  id="metakeywords"
+                                  value=""
+                                  name="manufacturername"
+                                  type="text"
+                                  class="form-control"
+                                />
+                                </div>
+                                <div class="mb-3">
+                                  <label for="metakeywords">Situation familiale</label>
+                                  <input *ngIf="perso11.cod_sit=='M'"
+                                    id="metakeywords"
+                                    value="Marié"
+                                    name="manufacturername"
+                                    type="text"
+                                    class="form-control"
+                                  />
+                                  <input *ngIf="perso11.cod_sit=='C'"
+                                  id="metakeywords"
+                                  value="Celebataire"
+                                  name="manufacturername"
+                                  type="text"
+                                  class="form-control"
+                                />
+                                <input *ngIf="perso11.cod_sit=='V'"
+                                id="metakeywords"
+                                value="Veufe"
+                                name="manufacturername"
+                                type="text"
+                                class="form-control"
+                              />
+                              <input *ngIf="perso11.cod_sit=='D'"
+                                id="metakeywords"
+                                value="Divorcé"
+                                name="manufacturername"
+                                type="text"
+                                class="form-control"
+                              />
+                                </div>
+                              </div>
+                            </div>
+                            <div class="d-flex flex-wrap gap-2">
+  
+                            </div>
+                          </form>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- end row -->
+                </div>
+                <!-- container-fluid -->
+              </ng-template>
+            </li>
+            <li [ngbNavItem]="2">
+              <a ngbNavLink>
+                <i class="bx bx-notepad
+                d-block check-nav-icon mt-4 mb-2"></i>
+                <p class="fw-bold mb-4">Adresse&contact</p>
+              </a>
+              <ng-template ngbNavContent>
+                <div class="container-fluid">
+                  <!-- start page title -->
+  
+                  <!-- end page title -->
+  
+                  <div class="row">
+                    <div class="col-12">
+                      <div class="card">
+                        <div class="card-body">
+                          <h1 class="card-title">Consultation Employee </h1> <h4 style=color:#2a3042> Matricule: {{perso11.mat_pers}}</h4>
+                          <p class="card-title-desc">Information </p>
+  
+                          <form>
+                            <div class="row">
+                              <div class="col-sm-6">
+                                <div  *ngFor="let item of adrpersbycodeandmat"class="mb-3">
+                                  <label for="productname"> Rue</label>
+                                  <input
+                                  value={{item.rue}}
+                                    id="productname"
+                                    name="productname"
+                                    type="text"
+                                    class="form-control"
+                                  />
+                                </div>
+                                <div class="mb-3">
+                                  <label for="manufacturername"> Code Gouvernorat</label>
+                                  <input
+                                   [value]="perso11.cod_gouv"
+                                    id="manufacturername"
+                                    name="manufacturername"
+                                    type="text"
+                                    class="form-control"
+                                  />
+                                </div>
+                                <div class="mb-3">
+                                  <label for="manufacturerbrand">Code Poste</label>
+                                  <input
+                                    id="manufacturerbrand"
+                                    [value]="perso11.cod_affect"
+                                    name="manufacturerbrand"
+                                    type="text"
+                                    class="form-control"
+                                  />
+                                </div>
+  
+                                  <div *ngFor="let item of adrpersbycodeandmat" class="mb-3">
+                                    <label for="price">Adresse Electronique
+                                    </label>
+                                    <input
+                                    value={{item.adr_electronique}}
+                                      type="text"
+                                      class="form-control"
+                                    />
+                                    <div class="invalid-feedback"></div>
+                                  </div>
+                                  <div *ngFor="let item of adrpersbycodeandmat" class="mb-3">
+                                    <label for="manufacturerbrand">Gsm</label>
+                                    <input
+                                      id="manufacturerbrand"
+                                      value={{item.tel_pers}}
+                                      name="manufacturerbrand"
+                                      type="text"
+                                      class="form-control"
+                                    />
+                                  </div>
+  
+  
+  
+  
+  
+  
+                              </div>
+  
+                              <div class="col-sm-6">
+                                <div   *ngFor="let item of adrpersbycodeandmat" class="mb-3">
+                                  <label for="price">
+                                     Rue 2éme langue
+                                  </label>
+                                  <input
+                                    type="text"
+                                    class="form-control"
+                                    value={{item.rue_a}}
+                                  />
+                                  <div class="invalid-feedback"></div>
+                                </div>
+                                <div class="mb-3">
+                                  <label class="control-label"> Libellé Gouvernorat</label>
+                                  <input
+                                  [value]="perso11.lib_gouv"
+                                  id="manufacturerbrand"
+                                  name="manufacturerbrand"
+                                  type="text"
+                                  class="form-control"
+                                />
+                                </div>
+                                <div class="mb-3">
+                                  <label aria-disabled="true" for="manufacturerbrand"> Libellé Poste
+                                  </label>
+                                  <input
+                                  [value]="perso11.lib_affect"
+                                    id="manufacturerbrand"
+                                    name="manufacturerbrand"
+                                    type="text"
+                                    class="form-control"
+                                  />
+                                </div>
+                                <div *ngFor="let item of adrpersbycodeandmat" class="mb-3">
+                                  <label for="manufacturerbrand">Téléphone
+                                  </label>
+  
+                                  <input
+                                  value={{item.tel_pers}}
+                                    id="manufacturerbrand"
+                                    name="manufacturerbrand"
+                                    type="text"
+                                    class="form-control"
+                                  />
+                                </div>
+                                <div class="mb-3" *ngFor="let item of adrpersbycodeandmat">
+                                  <label for="manufacturerbrand">Fax</label>
+                                  <input
+                                  value={{item.fax_pers}}
+                                    id="manufacturerbrand"
+                                    name="manufacturerbrand"
+                                    type="text"
+                                    class="form-control"
+                                  />
+                                </div>
+  
+  
+                              </div>
+  
+                            </div>
+                            <div class="d-flex flex-wrap gap-2 mt-2">
+  
+  
+                            </div>
+                          </form>
+                        </div>
+                      </div>
+  
+                      <div class="card">
+                        <div class="card-body">
+                          <h4 class="card-title"></h4>
+                          <p class="card-title-desc">Information</p>
+                         <app-aggridadress></app-aggridadress>
+
+  
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- end row -->
+                </div>
+                <!-- container-fluid -->
+  
+              </ng-template>
+            </li>
+            <li [ngbNavItem]="3">
+              <a ngbNavLink>
+                <i class="bx bx-badge-check d-block check-nav-icon mt-4 mb-2"></i>
+                <p class="fw-bold mb-4">Niveau d'instruction</p>
+
+              </a>
+              <ng-template ngbNavContent>
+                <div class="card">
+                  <div class="card-body">
+                    <h1 class="card-title">Consultation Employee </h1> <h4 style=color:#2a3042> Matricule: {{perso11.mat_pers}}</h4>
+
+                    <div class="card shadow-none border mb-0">
+                      <div class="card-body">
+                        <app-gridetab></app-gridetab>
+                       
+
+
+  
+                  </div>
+                    </div>
+  
+                  </div>
+                </div>
+  
+              </ng-template>
+            </li>
+          </ul>
+        </div>
+        <div class="col-lg-10">
+          <div [ngbNavOutlet]="nav"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  

@@ -1,0 +1,39 @@
+<div class="container-fluid">
+  <app-page-title title="Solde des congées de : "
+    ><h6 style="color: #001b85"></h6
+  ></app-page-title>
+
+  <div class="row">
+    <div class="col-12">
+      <div class="card">
+        <div class="card-body">
+          <h2 class="card-title-desc">
+            <i class="bx bx-user-pin"></i> Consultation bulletin de soin
+          </h2>
+          <div class="mb-4">
+            <td>
+              <label for="manufacturername">Matricule</label>
+              <input
+                id="manufacturername"
+                name="manufacturername"
+                type="text"
+                class="form-control"
+                value="{{ idbesoin.mat_pers }}"
+              />
+            </td>
+          </div>
+          <ag-grid-angular *ngIf="ligbult"
+            style="display: flex; flex-direction: column; height: 500px"
+            class="ag-theme-alpine"
+            [rowData]="ligbult"
+            [columnDefs]="columnAutorisation"
+            [defaultColDef]="defaultColDef"
+            [pagination]="true"
+            [modules]="modules"
+          >
+          </ag-grid-angular>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

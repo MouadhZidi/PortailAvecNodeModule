@@ -1,0 +1,133 @@
+<div class="container-fluid">
+
+    <!-- start page title -->
+    <app-page-title title="Demande Conge" ></app-page-title>
+    <!-- end page title -->
+  
+    <div class="row">
+      <div class="col-12">
+        <div class="card">
+          <div class="card-body">
+  
+            <h2 class="card-title-desc">Les informations ci-dessous</h2>
+  
+            <form [formGroup]="formConge" (ngSubmit)="DemandeConge()">
+              <div class="row">
+                <div class="col-sm-6">
+                  <div class="mb-3">
+                    <label for="productname">Date demande</label>
+                    <input id="productname" name="productname" type="text" class="form-control" formControlName="dateDemande" readonly
+                     >
+                    
+                  </div>
+
+                  <div class="mb-3">
+                    <label>Date début</label>
+                    <input type="text" class="form-control" mask="00/00/0000" placeholder="jj/MM/yyyy" formControlName="datDebut">
+                  </div>
+                  <div class="mb-3">
+                    <label>Date fin</label>
+                    <input type="text" class="form-control" mask="00/00/0000" placeholder="jj/MM/yyyy" formControlName="datFin">
+                  </div>
+
+                  <!-- <div class="mb-3">
+
+                  <label class="control-label">Réponse</label>
+                  <select class="form-select" aria-label="Default select example" formControlName="reponse">
+                      <option selected>Réponse</option>
+                      <option value="O">Oui</option>
+                      <option value="N">Non</option>
+  
+                    </select>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="control-label">Réponse chef</label>
+                        <select class="form-select" aria-label="Default select example" formControlName="reponseChef">
+                            <option selected>Réponse</option>
+                            <option value="O">Oui</option>
+                            <option value="N">Non</option>
+        
+                          </select>
+                      </div> -->
+
+                </div>
+  
+                <div class="col-sm-6">
+                    <div class="mb-3">
+                        <label for="inputPassword3" class="col-sm-2 col-form-label">Motif</label>
+                        <div class="col-sm-3">
+                          <select class="form-select" aria-label="Default select example" formControlName="codM">
+                            <option *ngFor="let i of listMotifCng" value="{{i.cod_m}}"> {{i.lib_mot}}</option>
+                          </select>
+                      </div>
+                      <div class="mb-3">
+                        <label class="control-label">Unité de congé</label>
+                        <select class="form-select" aria-label="Default select example" formControlName="cngTemps">
+                            <option> </option>
+
+                            <option value="J"> Jour Complet</option>
+                            <option value="D"> Demi-journée</option>
+
+                          </select>
+                      </div>
+                      <div class="mb-3">
+                        <label class="control-label">Séance début</label>
+                        <select class="form-select" aria-label="Default select example"
+                        formControlName="cngTempsDebut">
+                        <option> </option>
+
+                        <option value="M"> Matin</option>
+                        <option value="S"> Aprés-midi</option>
+
+                      </select>
+                      </div>
+                      <div class="mb-3">
+                        <label class="control-label">Séance fin</label>
+                        <select class="form-select" aria-label="Default select example"
+                        formControlName="cngTempsFin">
+                        <option> </option>
+
+                        <option value="M"> Matin</option>
+                        <option value="S"> Aprés-midi</option>
+
+                      </select>
+                      </div>
+
+                      <div class="mb-3">
+
+                    
+
+                      <!-- <div class="mb-3">
+                        <label for="exampleFormControlTextarea1">Observation chef</label>
+                <textarea class="form-control" id="exampleFormControlTextarea1" rows="2" formControlName="txtChef"></textarea>
+                      </div> -->
+
+                      </div>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="product-image" class="mb-3"> Fichier </label>
+                <div class="text-center">
+                  <input class="form-control" type="file" (change)="onChange($event)">
+              </div>
+              </div>
+
+
+              <div class="d-flex flex-wrap gap-2 mt-2">
+                <button type="submit" class="btn btn-primary">Enregistrer</button>
+              </div>
+              </div>
+            </form>
+          </div>
+        </div>
+
+      </div>
+    </div>
+    <!-- end row -->
+
+  </div> <!-- container-fluid -->
+  <ag-grid-angular style="height: 400px; width: 100%;"
+  class="ag-theme-alpine" [rowData]="ListConge" [columnDefs]="columnConge"
+  [defaultColDef]="defaultColDef" [pagination]="true" [modules]="modules" >
+</ag-grid-angular>

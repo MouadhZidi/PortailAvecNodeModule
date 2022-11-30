@@ -1,0 +1,30 @@
+<div class="container-fluid">
+  <!-- start page title -->
+  <app-page-title title="Solde des congées de : "
+    ><h6 style="color: #001b85"></h6
+  ></app-page-title>
+  <!-- end page title -->
+
+  <div class="row">
+    <div class="col-12">
+      <div class="card">
+        <div class="card-body">
+          <h2 class="card-title-desc"><i class="bx bx-user-pin"></i>  {{ nom }} {{ prenom }}</h2>
+          <ag-grid-angular
+            style="display: flex; flex-direction: column; height: 500px"
+            class="ag-theme-alpine"
+            [rowData]="rowData"
+            [columnDefs]="columnDefs"
+            [defaultColDef]="defaultColDef"
+            [pagination]="true"
+            [modules]="modules"
+          >
+          </ag-grid-angular>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- end row -->
+
+<!-- container-fluid -->
