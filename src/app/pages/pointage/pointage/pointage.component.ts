@@ -23,7 +23,7 @@ export class PointageComponent implements OnInit {
   }
 
   GetPointageById() {
-    this.serv.GetPointageById(this.tokenService.getUser().cod_soc,this.tokenService.getUser().matpers).subscribe(
+    this.serv.GetPointageById("1F0","10326").subscribe(
       (data: any[]) => {
         this.rowData = data;
 
@@ -38,7 +38,30 @@ export class PointageComponent implements OnInit {
 
 
   columnDefs = [
-  
+    {
+      headerName: "Matricule",
+      field: "id.mat_pers",
+      width: 170,
+      editable: true,
+      resizable: true,
+      sortable: true,
+      filter: true,
+      floatingFilter: true,
+     
+      
+    },
+    {
+      headerName: "Numéro pointage",
+      field: "num_point",
+      width: 170,
+      editable: true,
+      resizable: true,
+      sortable: true,
+      filter: true,
+      floatingFilter: true,
+     
+      
+    },
     {
       headerName: "Date pointage",
       field: "id.date_point",
@@ -50,7 +73,7 @@ export class PointageComponent implements OnInit {
       sortable: true,
       floatingFilter: true,
       
-      width: 150,
+      width: 300,
 
       filterParams: {
         // provide comparator function
@@ -82,24 +105,13 @@ export class PointageComponent implements OnInit {
       cellEditor: "primeCellEditor",
     },
 
-    {
-      headerName: "Numéro pointage",
-      field: "num_point",
-      width: 170,
-      editable: true,
-      resizable: true,
-      sortable: true,
-      filter: true,
-      floatingFilter: true,
-     
-      
-    },
+ 
 
 
     {
       headerName: "Heure pointage",
       field: "id.h_point",
-      width: 150,
+      width: 300,
       editable: true,
       resizable: true,
       sortable: true,
@@ -112,7 +124,7 @@ export class PointageComponent implements OnInit {
     {
       headerName: "Minute pointage",
       field: "id.min_point",
-      width: 160,
+      width: 320,
       editable: true,
       resizable: true,
       sortable: true,
@@ -122,24 +134,13 @@ export class PointageComponent implements OnInit {
       
     },
 
-    {
-      headerName: "Type pointeuse",
-      field: "typ_point",
-      width: 150,
-      editable: true,
-      resizable: true,
-      sortable: true,
-      filter: true,
-      floatingFilter: true,
-    
-      
-    },
+
 
     
     {
       headerName: "Numéro carte",
       field: "n_carte",
-      width: 150,
+      width: 300,
       editable: true,
       resizable: true,
       sortable: true,
@@ -149,85 +150,6 @@ export class PointageComponent implements OnInit {
       
     },
     
-    {
-      headerName: "Numéro pointage",
-      field: "num_point",
-      width: 170,
-      editable: true,
-      resizable: true,
-      sortable: true,
-      filter: true,
-      floatingFilter: true,
-     
-      
-    },
-
-
-    {
-      headerName: "Type régime",
-      field: "typ_reg",
-      width: 150,
-      editable: true,
-      resizable: true,
-      sortable: true,
-      filter: true,
-      floatingFilter: true,
-  
-      
-    },
-
-    {
-      headerName: "C. régime",
-      field: "cod_reg",
-      width: 120,
-      editable: true,
-      resizable: true,
-      sortable: true,
-      filter: true,
-      floatingFilter: true,
-   
-      
-    },
-    {
-      headerName: "H. régime",
-      field: "h_reg",
-      width: 120,
-      editable: true,
-      resizable: true,
-      sortable: true,
-      filter: true,
-      floatingFilter: true,
-      
-      
-    },
-
-    {
-      headerName: "M. régime",
-      field: "m_reg",
-      width: 120,
-      editable: true,
-      resizable: true,
-      sortable: true,
-      filter: true,
-      floatingFilter: true,
-     
-      
-    },
-
-    {
-      headerName: "Code motif",
-      field: "cod_m",
-      width: 120,
-      editable: true,
-      resizable: true,
-      sortable: true,
-      filter: true,
-      floatingFilter: true,
-      
-      
-    },
-
-
     
   ];
 

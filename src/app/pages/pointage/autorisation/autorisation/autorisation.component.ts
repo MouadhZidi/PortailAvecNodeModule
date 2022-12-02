@@ -20,7 +20,7 @@ export class AutorisationComponent implements OnInit {
   }
 
   GeAutorisationById() {
-    this.serv.GeAutorisationById(this.tokenService.getUser().cod_soc,this.tokenService.getUser().matpers).subscribe(
+    this.serv.GeAutorisationById("1F0", "10326").subscribe(
       (data: any[]) => {
         this.rowData = data;
 
@@ -33,97 +33,9 @@ export class AutorisationComponent implements OnInit {
   }
 
   columnDefs = [
-  
     {
-      headerName: "Date début",
-      field: "dat_debut_aut",
-      cellRenderer: (data) => {
-        return moment(data.createdAt).format('MM/DD/YYYY')
-    },
-      filter: "agDateColumnFilter",
-      resizable: true,
-      sortable: true,
-      floatingFilter: true,
-      
-      width: 150,
-
-      filterParams: {
-        // provide comparator function
-        comparator: function (filterLocalDateAtMidnight: any, cellValue: any) {
-          var dateAsString = cellValue;
-
-          if (dateAsString == null) {
-            return 0;
-          }
-
-          // In the example application, dates are stored as dd/mm/yyyy
-          // We create a Date object for comparison against the filter date
-          var dateParts = dateAsString.split("/");
-          var year = Number(dateParts[2]);
-          var month = Number(dateParts[1]) - 1;
-          var day = Number(dateParts[0]);
-          var cellDate = new Date(year, month, day);
-
-          // Now that both parameters are Date objects, we can compare
-          if (cellDate < filterLocalDateAtMidnight) {
-            return -1;
-          } else if (cellDate > filterLocalDateAtMidnight) {
-            return 1;
-          }
-          return 0;
-        },
-      },
-      editable: true,
-      cellEditor: "primeCellEditor",
-    },
-
-
-    {
-      headerName: "Date fin",
-      field: "dat_fin_aut",
-      cellRenderer: (data) => {
-        return moment(data.createdAt).format('MM/DD/YYYY')
-    },
-      filter: "agDateColumnFilter",
-      resizable: true,
-      sortable: true,
-      floatingFilter: true,
-      
-      width: 150,
-
-      filterParams: {
-        // provide comparator function
-        comparator: function (filterLocalDateAtMidnight: any, cellValue: any) {
-          var dateAsString = cellValue;
-
-          if (dateAsString == null) {
-            return 0;
-          }
-
-          // In the example application, dates are stored as dd/mm/yyyy
-          // We create a Date object for comparison against the filter date
-          var dateParts = dateAsString.split("/");
-          var year = Number(dateParts[2]);
-          var month = Number(dateParts[1]) - 1;
-          var day = Number(dateParts[0]);
-          var cellDate = new Date(year, month, day);
-
-          // Now that both parameters are Date objects, we can compare
-          if (cellDate < filterLocalDateAtMidnight) {
-            return -1;
-          } else if (cellDate > filterLocalDateAtMidnight) {
-            return 1;
-          }
-          return 0;
-        },
-      },
-      editable: true,
-      cellEditor: "primeCellEditor",
-    },
-
-    {
-      headerName: "Numéro pointage",
-      field: "id.num_point",
+      headerName: "Matricule",
+      field: "id.mat_pers",
       width: 170,
       editable: true,
       resizable: true,
@@ -133,12 +45,54 @@ export class AutorisationComponent implements OnInit {
      
       
     },
+  
+    {
+      headerName: "Date début",
+      field: "dat_debut_aut",
+      cellRenderer: (data) => {
+        return moment(data.createdAt).format('DD/MM/YYYY')
+    },
+      filter: "agDateColumnFilter",
+      resizable: true,
+      sortable: true,
+      floatingFilter: true,
+      
+      width: 200,
 
+      filterParams: {
+        // provide comparator function
+        comparator: function (filterLocalDateAtMidnight: any, cellValue: any) {
+          var dateAsString = cellValue;
+
+          if (dateAsString == null) {
+            return 0;
+          }
+
+          // In the example application, dates are stored as dd/mm/yyyy
+          // We create a Date object for comparison against the filter date
+          var dateParts = dateAsString.split("/");
+          var year = Number(dateParts[2]);
+          var month = Number(dateParts[1]) - 1;
+          var day = Number(dateParts[0]);
+          var cellDate = new Date(year, month, day);
+
+          // Now that both parameters are Date objects, we can compare
+          if (cellDate < filterLocalDateAtMidnight) {
+            return -1;
+          } else if (cellDate > filterLocalDateAtMidnight) {
+            return 1;
+          }
+          return 0;
+        },
+      },
+      editable: true,
+      cellEditor: "primeCellEditor",
+    },
 
     {
-      headerName: "Numéro autorisation",
-      field: "num_aut",
-      width: 181,
+      headerName: "Libélle autorisation",
+      field: "lib_aut",
+      width: 580,
       editable: true,
       resizable: true,
       sortable: true,
@@ -149,15 +103,15 @@ export class AutorisationComponent implements OnInit {
     },
 
     {
-      headerName: "Code autorisation",
-      field: "cod_aut",
-      width: 168,
+      headerName: "Heure retour",
+      field: "heur_r",
+      width: 150,
       editable: true,
       resizable: true,
       sortable: true,
       filter: true,
       floatingFilter: true,
-     
+      
       
     },
 
@@ -175,18 +129,6 @@ export class AutorisationComponent implements OnInit {
     },
 
     
-    {
-      headerName: "Heure retour",
-      field: "heur_r",
-      width: 150,
-      editable: true,
-      resizable: true,
-      sortable: true,
-      filter: true,
-      floatingFilter: true,
-      
-      
-    },
     
     {
       headerName: "Min retour",
@@ -215,18 +157,6 @@ export class AutorisationComponent implements OnInit {
       
     },
 
-    {
-      headerName: "Code service",
-      field: "cod_serv",
-      width: 130,
-      editable: true,
-      resizable: true,
-      sortable: true,
-      filter: true,
-      floatingFilter: true,
-   
-      
-    },
 
   ];
 

@@ -12,13 +12,15 @@ import { PointageComponent } from './pointage/pointage.component';
 import { PointageRoutingModule } from './pointage-routing.module';
 import { RetardComponent } from './retard/retard/retard.component';
 import { AutorisationComponent } from './autorisation/autorisation/autorisation.component';
+import { CongeComponent } from './conge/conge.component';
 
 
 @NgModule({
   declarations: [
    PointageComponent,
    RetardComponent,
-   AutorisationComponent
+   AutorisationComponent,
+   CongeComponent
   ],
   imports: [
     CommonModule,

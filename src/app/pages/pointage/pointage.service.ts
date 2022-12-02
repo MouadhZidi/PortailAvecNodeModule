@@ -44,4 +44,12 @@ export class PointageService {
   };
 
 
+  GetConge = (codSoc: any, matPers: any): Observable<any[]> => {
+    return this.httpClient.get<any[]>(
+      api + "/conge/getCongeChef/" + codSoc + "/" + matPers
+    );
+  };
+
+
+
 }

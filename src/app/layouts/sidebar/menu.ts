@@ -859,6 +859,12 @@ export const MENU: MenuItem[] = [
                     label: 'Consultation autorisation',
                     link: '/pointage/autorisation',
                     parentId: 126
+                },
+                {
+                    id: 130,
+                    label: 'Consultation congé',
+                    link: '/pointage/conge',
+                    parentId: 126
                 }
               
               
