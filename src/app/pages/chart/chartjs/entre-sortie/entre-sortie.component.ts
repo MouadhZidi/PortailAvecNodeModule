@@ -1,27 +1,23 @@
 import { Component, OnInit } from '@angular/core';
-import { ChartService } from '../chart.service';
+import { ChartService } from '../../chart.service';
 import { Color, Label } from 'ng2-charts';
 import { ChartDataSets, ChartOptions, ChartType } from 'chart.js';
-import { lineAreaChart, pieChart, donutChart, radarChart, polarChart } from './data';
 
 @Component({
-  selector: 'app-chartjs',
-  templateUrl: './chartjs.component.html',
-  styleUrls: ['./chartjs.component.scss']
+  selector: 'app-entre-sortie',
+  templateUrl: './entre-sortie.component.html',
+  styleUrls: ['./entre-sortie.component.scss']
 })
-
-/**
- * chartjs-chart component
- */
-export class ChartjsComponent implements OnInit {
+export class EntreSortieComponent implements OnInit {
 
   public barChartLabels: Label[] = [];
-  public barChartType: ChartType = 'pie';
+  public barChartType: ChartType = 'bar';
  
-  lstNbr:number[];
-
+  sortie:number[];
+entree:number[];
   public barChartData: ChartDataSets[] = [
-    { data: [], label: 'Series A' },
+    { data: [], label: 'Nombre des entrées' },
+    { data: [], label: 'Nombre des sorties' }
 
   ];
   list:any[]=[]
@@ -47,7 +43,7 @@ export class ChartjsComponent implements OnInit {
 
   ngOnInit() {
     this.breadCrumbItems = [{ label: 'Charts' }, { label: 'Chartjs chart', active: true }];
-
+this.onSelect()
    /**
     * Fetches the data
     */
@@ -69,8 +65,9 @@ export class ChartjsComponent implements OnInit {
   // };
   lineChartColors: Color[] = [
     {
-      borderColor: ['#556ee6', '#86C7F3'],
-      backgroundColor: ['#556ee6', '#86C7F3'],
+      borderColor: '#34c38f',
+      backgroundColor: '#556ee6', 
+     
     },
   ];
   /**
@@ -91,30 +88,33 @@ export class ChartjsComponent implements OnInit {
   //   // Financial Report
   //   this.polarChart = polarChart;
   // }
-  onSelect(event:any){
+  onSelect(){
   this.barChartLabels=[]
-    this.lstNbr=[]
+    this.sortie=[]
+    this.entree=[]
 
-    this.serv.GetAbsantiesmeBySexe(event.target.value).subscribe((data:Object[])=>{
+    this.serv.GetDepartEntreSortie().subscribe((data:Object[])=>{
       
      this.list=data
      console.log(this.list)
       data.forEach(element => {
 
-        this.lstNbr.push(element["d"]);
-        this.barChartLabels.push(element["sexe"]);
+        this.entree.push(element["entree"]);
+        this.sortie.push(element["sortie"]);
 
+        this.barChartLabels.push(element["date_HIST"]);
 
 
       });
        this.barChartData=[
-         { data: this.lstNbr,
-            label: 'Nombre de jour de congé' },
+         { data: this.entree,
+            label: 'Nombre des entrées' },
+            { data: this.sortie,
+              label: 'Nombre des sorties' },
        ]
     })
   
 
 
   }
-  
 }

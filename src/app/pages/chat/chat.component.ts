@@ -34,7 +34,7 @@ export class ChatComponent implements OnInit, AfterViewInit {
   }
 
   ngOnInit() {
-    this.breadCrumbItems = [{ label: 'Skote' }, { label: 'Chat', active: true }];
+    this.breadCrumbItems = [{ label: 'Portail ArabSoft' }, { label: 'Chat', active: true }];
 
     this.formData = this.formBuilder.group({
       message: ['', [Validators.required]],

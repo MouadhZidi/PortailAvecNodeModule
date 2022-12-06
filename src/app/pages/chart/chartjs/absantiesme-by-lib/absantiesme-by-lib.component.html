@@ -1,0 +1,13 @@
+<div>
+ 
+    <div>
+      <div style="display: block">
+        <input type="text" (keyup.enter)="getChart($event)" placeholder="Donner l'année"
+        style="text-align: center;" class="form-control">
+        <canvas baseChart [datasets]="barChartData" [colors]="lineChartColors" 
+         [labels]="barChartLabels" [options]="barChartOptions" 
+          [legend]="barChartLegend" [chartType]="barChartType"
+          (chartHover)="chartHovered($event)" (chartClick)="chartClicked($event)"></canvas>
+      </div>
+    </div>
+  </div>

@@ -4,6 +4,7 @@ import { PointageService } from '../pointage.service';
 import { ClientSideRowModelModule } from "@ag-grid-community/client-side-row-model";
 import { Module } from "@ag-grid-community/core";
 import * as moment from 'moment';
+import { FormBuilder, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-conge',
@@ -12,15 +13,28 @@ import * as moment from 'moment';
 })
 export class CongeComponent implements OnInit {
 
+  mat_pers: any;
+  nom_pers: any;
+  formDocument:FormGroup
   rowData: any[] = [];
-  constructor(private serv: PointageService , private tokenService: TokenStorage) { }
+  constructor(private serv: PointageService , private tokenService: TokenStorage,private  fb:FormBuilder) { }
+ 
 
   ngOnInit() {
-    this.GetConge();
+    this.formDocument = this.fb.group({
+      codeServ:["1F0"],
+      matChef:["10326"],
+      mat_pers: [""],
+      cod_soc: [""],
+      nom_prenom:[""],
+      
+    });
   }
 
   GetConge() {
-    this.serv.GetConge("1F0","10326").subscribe(
+    debugger
+    this.serv.GetConge(this.formDocument.value).subscribe(
+      
       (data: any[]) => {
         this.rowData = data;
 
@@ -33,47 +47,13 @@ export class CongeComponent implements OnInit {
   }
 
   columnDefs = [
-    {
-      headerName: "Matricule",
-      field: "mat_pers",
-      width: 130,
-      editable: true,
-      resizable: true,
-      sortable: true,
-      filter: true,
-      floatingFilter: true,
-     
-      
-    },
-    {
-      headerName: "Nom et prénom",
-      field: "nom_prenom",
-      width: 170,
-      editable: true,
-      resizable: true,
-      sortable: true,
-      filter: true,
-      floatingFilter: true,
-     
-      
-    },
 
-    {
-      headerName: "Numéro congé",
-      field: "num_dcng",
-      width: 150,
-      editable: true,
-      resizable: true,
-      sortable: true,
-      filter: true,
-      floatingFilter: true,
-     
-      
-    },
+
+
 
     {
       headerName: "Année congé",
-      field: "annee_cng",
+      field: "anne_cng",
       width: 150,
       editable: true,
       resizable: true,
@@ -100,8 +80,8 @@ export class CongeComponent implements OnInit {
 
     {
       headerName: "Libélle congé",
-      field: "lib_cng",
-      width: 170,
+      field: "motif_cng",
+      width: 350,
       editable: true,
       resizable: true,
       sortable: true,
@@ -123,7 +103,7 @@ export class CongeComponent implements OnInit {
       sortable: true,
       floatingFilter: true,
       
-      width: 170,
+      width: 230,
 
       filterParams: {
         // provide comparator function
@@ -167,7 +147,7 @@ export class CongeComponent implements OnInit {
       sortable: true,
       floatingFilter: true,
       
-      width: 170,
+      width: 230,
 
       filterParams: {
         // provide comparator function
@@ -210,7 +190,7 @@ export class CongeComponent implements OnInit {
       sortable: true,
       floatingFilter: true,
       
-      width: 170,
+      width: 230,
 
       filterParams: {
         // provide comparator function
@@ -247,8 +227,8 @@ export class CongeComponent implements OnInit {
 
     {
       headerName: "Nbr jour",
-      field: "ouvrable",
-      width: 150,
+      field: "nbr_jours",
+      width: 230,
       editable: true,
       resizable: true,
       sortable: true,

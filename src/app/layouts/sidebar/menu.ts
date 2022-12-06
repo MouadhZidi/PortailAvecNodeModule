@@ -713,30 +713,30 @@ export const MENU: MenuItem[] = [
         icon: 'bxs-bar-chart-alt-2',
         label: 'Graphiques',
         subItems: [
-            {
-                id: 114,
-                label: 'Masse salariale',
-                link: '/charts/apex',
-                parentId: 113
-            },
             // {
-            //     id: 115,
-            //     label: 'MENUITEMS.CHARTS.LIST.CHARTJS',
-            //     link: '/charts/chartjs',
+            //     id: 114,
+            //     label: 'Masse salariale',
+            //     link: '/charts/apex',
             //     parentId: 113
             // },
             {
-                id: 116,
-                label: 'Libellé absentéisme',
-                link: '/charts/chartist',
+                id: 115,
+                label: 'Statistiques',
+                link: '/charts/chartjs',
                 parentId: 113
             },
-            {
-                id: 117,
-                label: 'Gestion effectif EFFECTIF',
-                link: '/charts/echart',
-                parentId: 113
-            }
+            // {
+            //     id: 116,
+            //     label: 'Libellé absentéisme',
+            //     link: '/charts/chartist',
+            //     parentId: 113
+            // },
+            // {
+            //     id: 117,
+            //     label: 'Gestion effectif EFFECTIF',
+            //     link: '/charts/echart',
+            //     parentId: 113
+            // }
         ]
     },
     // {
@@ -837,39 +837,39 @@ export const MENU: MenuItem[] = [
 
 
 
-        {
-            id: 126,
-            label: 'Pointage',
-            icon: 'bx bx-time',
-            subItems: [
-                {
-                    id: 128,
-                    label: 'Consultation pointage',
-                    link: '/pointage/pointage',
-                    parentId: 126
-                },
-                {
-                    id: 128,
-                    label: 'Consultation retard',
-                    link: '/pointage/retard',
-                    parentId: 126
-                },
-                {
-                    id: 129,
-                    label: 'Consultation autorisation',
-                    link: '/pointage/autorisation',
-                    parentId: 126
-                },
-                {
-                    id: 130,
-                    label: 'Consultation congé',
-                    link: '/pointage/conge',
-                    parentId: 126
-                }
+        // {
+        //     id: 126,
+        //     label: 'Pointage',
+        //     icon: 'bx bx-time',
+        //     subItems: [
+        //         {
+        //             id: 128,
+        //             label: 'Consultation pointage',
+        //             link: '/pointage/pointage',
+        //             parentId: 126
+        //         },
+        //         {
+        //             id: 128,
+        //             label: 'Consultation retard',
+        //             link: '/pointage/retard',
+        //             parentId: 126
+        //         },
+        //         {
+        //             id: 129,
+        //             label: 'Consultation autorisation',
+        //             link: '/pointage/autorisation',
+        //             parentId: 126
+        //         },
+        //         {
+        //             id: 130,
+        //             label: 'Consultation congé',
+        //             link: '/pointage/conge',
+        //             parentId: 126
+        //         }
               
               
-            ]
-        },
+        //     ]
+        // },
 
         {
             id: 127,
@@ -889,6 +889,39 @@ export const MENU: MenuItem[] = [
                     label: 'Consultation historique ',
                     link: '/EspaceChef/historique',
                     parentId: 127
+                },
+                {
+                    id: 126,
+                    label: 'Pointage',
+                    icon: 'bx bx-time',
+                    subItems: [
+                        {
+                            id: 128,
+                            label: 'Consultation pointage',
+                            link: '/pointage/pointage',
+                            parentId: 126
+                        },
+                        {
+                            id: 128,
+                            label: 'Consultation retard',
+                            link: '/pointage/retard',
+                            parentId: 126
+                        },
+                        {
+                            id: 129,
+                            label: 'Consultation autorisation',
+                            link: '/pointage/autorisation',
+                            parentId: 126
+                        },
+                        {
+                            id: 130,
+                            label: 'Consultation congé',
+                            link: '/pointage/conge',
+                            parentId: 126
+                        }
+                      
+                      
+                    ]
                 },
             ]
         },

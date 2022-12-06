@@ -13,9 +13,12 @@ import { ApexComponent } from './apex/apex.component';
 import { ChartjsComponent } from './chartjs/chartjs.component';
 import { ChartistComponent } from './chartist/chartist.component';
 import { EchartComponent } from './echart/echart.component';
+import { AbsantiesmeByLibComponent } from './chartjs/absantiesme-by-lib/absantiesme-by-lib.component';
+import { DepartDefinitiveComponent } from './chartjs/depart-definitive/depart-definitive.component';
+import { EntreSortieComponent } from './chartjs/entre-sortie/entre-sortie.component';
 
 @NgModule({
-  declarations: [ApexComponent, ChartjsComponent, ChartistComponent, EchartComponent],
+  declarations: [ApexComponent, ChartjsComponent, ChartistComponent, EchartComponent, AbsantiesmeByLibComponent, DepartDefinitiveComponent, EntreSortieComponent],
   imports: [
     CommonModule,
     ChartRoutingModule,
