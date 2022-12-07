@@ -8,6 +8,7 @@ import { HttpClient } from '@angular/common/http';
 import { MENU } from './menu';
 import { MenuItem } from './menu.model';
 import { TranslateService } from '@ngx-translate/core';
+import { TokenStorage } from 'src/app/core/services/token-storage.service';
 
 @Component({
   selector: 'app-sidebar',
@@ -23,12 +24,13 @@ export class SidebarComponent implements OnInit, AfterViewInit, OnChanges {
   @Input() isCondensed = false;
   menu: any;
   data: any;
-
+itemm:any
   menuItems = [];
 
   @ViewChild('sideMenu') sideMenu: ElementRef;
 
-  constructor(private eventService: EventService, private router: Router, public translate: TranslateService, private http: HttpClient) {
+  constructor(private eventService: EventService, private router: Router, public translate: TranslateService, private http: HttpClient,
+    private token:TokenStorage) {
     router.events.forEach((event) => {
       if (event instanceof NavigationEnd) {
         this._activateMenuDropdown();
@@ -134,12 +136,28 @@ export class SidebarComponent implements OnInit, AfterViewInit, OnChanges {
     }
 
   }
+  private hiddenItems: string[] = ["127"];
 
   /**
    * Initialize
    */
   initialize(): void {
     this.menuItems = MENU;
+    if(this.token.getUser().role_portail=="CHEF"){
+      MENU[14].isLayout=false
+    }else{
+      MENU[14].isLayout=true
+
+    }
+    if(this.token.getUser().role_portail=="RH"){
+      MENU[15].isRh=false
+    }else{
+      MENU[15].isRh=true
+
+    }
+    console.log( MENU[15])
+    console.log(this.token.getUser().role_portail)
+
   }
 
   /**

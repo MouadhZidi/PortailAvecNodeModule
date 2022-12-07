@@ -907,6 +907,7 @@ export const MENU: MenuItem[] = [
             id: 127,
             label: 'Espace Chef',
             icon: 'bx bx-user-pin',
+            isLayout:true,
             subItems: [
                 {
                     id: 129,
@@ -961,6 +962,7 @@ export const MENU: MenuItem[] = [
             id: 128,
             label: 'Espace Rh',
             icon: 'bx bx-user-pin',
+            isRh:true,
             subItems: [
                 {
                     id: 130,
