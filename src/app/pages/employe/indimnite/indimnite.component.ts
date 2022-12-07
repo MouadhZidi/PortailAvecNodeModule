@@ -54,7 +54,7 @@ export class IndimniteComponent implements OnInit {
       floatingFilter: true,
       width: 120,
     },
-    { headerName: "Date Indemnité",
+    { headerName: "Date indemnité",
       field: "date_ind",
       filter: "agDateColumnFilter",
       floatingFilter: true,
@@ -88,7 +88,7 @@ export class IndimniteComponent implements OnInit {
       editable: true,
       cellEditor: "primeCellEditor",
     }, {
-      headerName: "date fin indeminité",
+      headerName: "Date fin indeminité",
       floatingFilter: true,
 
 
@@ -135,7 +135,7 @@ export class IndimniteComponent implements OnInit {
       width: 150,
     },
     {
-      headerName: " Code Niveau",
+      headerName: " Code niveau",
       field: "cod_niv",
       editable: true,
       resizable: true,

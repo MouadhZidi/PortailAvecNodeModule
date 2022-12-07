@@ -100,6 +100,38 @@ export const MENU: MenuItem[] = [
         ]
     },
     {
+        id: 13,
+        label: 'Consultation Collaborateur',
+        icon: 'bx-store',
+        subItems: [
+            {
+                id: 13,
+                label: 'Informations personnel',
+                link: '/EspaceCollaborateur/infopers',
+                parentId: 13
+            },
+            {
+                id: 14,
+                label: 'Informations professionel',
+                link: '/EspaceCollaborateur/infoprof',
+                parentId: 13
+            },
+            {
+                id: 15,
+                label: 'Informations sociale',
+                link: '/EspaceCollaborateur/infosoc',
+                parentId: 13
+            },
+            {
+                id: 16,
+                label: 'Evaluation des Compétances',
+                link: '/EspaceCollaborateur/evalcomp',
+                parentId: 13
+            },
+       
+        ]
+    },
+    {
         id: 21,
         label: 'MENUITEMS.DEMANDE.TEXT',
         icon: 'bx bx-highlight',
@@ -944,6 +976,24 @@ export const MENU: MenuItem[] = [
                     link: '/EspaceRh/historique',
                     parentId: 128
                 },
+                {
+                    id: 132,
+                    label: 'Consultation opposition ',
+                    link: '/opposition/consltoppoRh',
+                    parentId: 128
+                },
+                {
+                    id: 133,
+                    label: 'Consultation Conge ',
+                    link: '/conge/soldeRh',
+                    parentId: 128
+                },
+                {
+                    id: 133,
+                    label: 'Consultation Paie ',
+                    link: '/paie/bulletin-paie-Rh',
+                    parentId: 128
+                }
             ]
         }
 ];

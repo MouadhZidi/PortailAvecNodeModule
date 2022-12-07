@@ -23,6 +23,7 @@ export class MdpComponent implements OnInit {
   constructor(private serv: PersonnelService,private token: TokenStorage) {}
   columnDefs = [
     {
+      headerName: "Date embauche",
       field: "dat_emb",
       filter: "agDateColumnFilter",
       filterParams: {
@@ -78,7 +79,7 @@ export class MdpComponent implements OnInit {
       pinned: true,
       },
     {
-      headerName: "fonction",
+      headerName: "Fonction",
       field: "fonct_corr",
       editable: true,
       resizable: true,

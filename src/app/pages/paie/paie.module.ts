@@ -9,11 +9,13 @@ import { PaieRoutingModule } from './paie-routing.module';
 import { EtatApresPaieComponent } from './etat-apres-paie/etat-apres-paie.component';
 import { DeclarationComponent } from './declaration/declaration.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { EtatApresPaieRhComponent } from './etat-apres-paie-rh/etat-apres-paie-rh.component';
 
 @NgModule({
   declarations: [
     EtatApresPaieComponent,
-    DeclarationComponent
+    DeclarationComponent,
+    EtatApresPaieRhComponent
   ],
   imports: [
     CommonModule,

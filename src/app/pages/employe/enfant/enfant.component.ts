@@ -34,7 +34,7 @@ export class EnfantComponent implements OnInit {
       width: 200,
     },
     {
-      headerName: "type",
+      headerName: "Type",
       field: "typ_membre",
       editable: true,
       resizable: true,
@@ -71,7 +71,7 @@ export class EnfantComponent implements OnInit {
     },
     
     {
-      headerName: "Date de Naissance",
+      headerName: "Date de naissance",
       field: "dat_naiss",
       filter: "agDateColumnFilter",
       resizable: true,
@@ -148,7 +148,7 @@ export class EnfantComponent implements OnInit {
     },
 
     {
-      headerName: "Date Cin",
+      headerName: "Date cin",
       field: "dat_cin",
       filter: "agDateColumnFilter",
       resizable: true,

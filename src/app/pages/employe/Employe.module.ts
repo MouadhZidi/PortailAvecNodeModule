@@ -27,6 +27,16 @@ import { ConjointComponent } from './conjoint/conjoint.component';
 import { EnfantComponent } from './enfant/enfant.component';
 import { ScolenfantComponent } from './scolenfant/scolenfant.component';
 import { AffilComponent } from './affil/affil.component';
+import { EvalcompComponent } from './evalcomp/evalcomp.component';
+import { ObjagentComponent } from './objagent/objagent.component';
+import { EvalempComponent } from './evalemp/evalemp.component';
+import { CompetancesreelComponent } from './competancesreel/competancesreel.component';
+import { ComprequiseComponent } from './comprequise/comprequise.component';
+import { EvaldefinitifComponent } from './evaldefinitif/evaldefinitif.component';
+import { AggridcompreelComponent } from './aggridcompreel/aggridcompreel.component';
+import { AggridcomprequiseComponent } from './aggridcomprequise/aggridcomprequise.component';
+import { AggridevalagentComponent } from './aggridevalagent/aggridevalagent.component';
+import { AggridobjagentComponent } from './aggridobjagent/aggridobjagent.component';
 
 
 const config: DropzoneConfigInterface = {
@@ -50,7 +60,17 @@ const config: DropzoneConfigInterface = {
     ConjointComponent,
     EnfantComponent,
     ScolenfantComponent,
-    AffilComponent
+    AffilComponent,
+    EvalcompComponent,
+    ObjagentComponent,
+    EvalempComponent,
+    CompetancesreelComponent,
+    ComprequiseComponent,
+    EvaldefinitifComponent,
+    AggridcompreelComponent,
+    AggridcomprequiseComponent,
+    AggridevalagentComponent,
+    AggridobjagentComponent
     
   ],
   imports: [

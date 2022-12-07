@@ -31,4 +31,17 @@ export class PersonnelService {
 getfamsoc=(x:any,y:any): Observable<any[]> =>{
   return this.http.get<any[]> (api+"/scofam/getscol/"+x+"/"+y)
 
-}}
+}
+getcollab=(x:any,y:any): Observable<any[]> =>{
+  return this.http.get<any[]> (api+"/infoPers/getPers22/"+x+"/"+y)
+
+}
+getadr=(x:any,y:any): Observable<any[]> =>{
+  return this.http.get<any[]> (api+"/Adrpers/getAdrpers/"+x+"/"+y)
+
+}
+
+getpersonnelcol=(x:any,y:any): Observable<any[]> =>{
+  return this.http.get<any[]> (api+"/infoPers/getPers/"+x+"/"+y)
+  
+  }}

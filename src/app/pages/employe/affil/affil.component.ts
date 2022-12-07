@@ -124,7 +124,7 @@ export class AffilComponent implements OnInit {
 
     
    {
-      headerName: "Numero affilliation",
+      headerName: "Num. affilliation",
       field: "num_affil",
       editable: true,
       resizable: true,

@@ -57,6 +57,12 @@ export class CongeService {
       API_URL + "/conge/getcongebyeid/" + codSoc + "/" + matPers
     );
   };
+
+  GetCongeRh = (conge:any): Observable<any[]> => {
+    return this.httpClient.post<any[]>(
+      API_URL + "/conge/getcongeRh",conge
+    );
+  };
   getReportFacture(numFactInd: any) {
     const httpOptions = {
       //'responseType'  : 'arraybuffer' as 'json'

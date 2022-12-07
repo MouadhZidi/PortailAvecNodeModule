@@ -6,6 +6,8 @@ import { Observable } from "rxjs";
 
 const API_URL = environment.urlServerMouadh;
 const api = "http://192.168.2.232:8080/consPaie/getPaie";
+const apiRh = "http://192.168.2.232:8080/consPaie/getPaieRh";
+
 const httpOptions = {
   headers: new HttpHeaders({ "Content-Type": "application/json" }),
 };
@@ -71,5 +73,8 @@ export class PaieService {
 
   public GetBull(bulletin: any) {
     return this.httpClient.post<any>(api, bulletin);
+  }
+  public GetBullRh(bulletin: any) {
+    return this.httpClient.post<any>(apiRh, bulletin);
   }
 }

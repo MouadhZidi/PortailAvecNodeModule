@@ -1,0 +1,910 @@
+
+<div   class="container-fluid">
+    <div class="checkout-tabs">
+      <div class="row">
+        <div class="col-xl-2 col-sm-3">
+          <ul ngbNav #nav="ngbNav" [activeId]="1" class="nav-pills flex-column">
+            <li [ngbNavItem]="1">
+              <a ngbNavLink>
+                <i class="bx bxs-user d-block check-nav-icon mt-4 mb-2"></i>
+                <p class="fw-bold mb-4">Information Generale</p>
+              </a>
+              <ng-template ngbNavContent>
+                <div class="container-fluid">
+                  <!-- start page title -->
+                 
+                  <!-- end page title -->
+  
+                  <div class="row">
+                    <div class="col-12">
+                      <div class="card">
+                        <div class="card-body">
+                          <h1 class="card-title" > </h1> <h4 style=color:#2a3042;> Matricule: {{perso11.mat_pers}}</h4>
+                          <p class="card-title-desc"> information </p>
+
+                      
+                          <ag-grid-angular 
+                          style="width: 100%; height: 300px;" 
+                          class="ag-theme-alpine"
+                          [rowData]="rowData" 
+                          [columnDefs]="columnDefs"
+                          [defaultColDef]="defaultColDef"
+                          [pagination]="true"
+                          [rowSelection]="rowSelection"
+                      
+                          [modules]="modules"
+                          (selectionChanged)="onSelectionChanged($event)"
+                      
+                          (gridReady)="getpers($event)"
+
+                      
+                          >
+                      </ag-grid-angular>
+  
+                        </div>
+                      </div>
+  
+                      <div  *ngIf="fiche" class="card">
+                        <div class="card-body" >
+                          <form>
+                            <div class="row">
+                              <div class="col-sm-6">
+                                <div class="mb-3">
+                                  <label for="productname">Date d'embauche</label>
+                                  <input
+                                    [value]="perso11.dat_emb"
+                                    id="productname"
+                                    name="productname"
+                                    type="text"
+                                    class="form-control"
+                                  />
+                                </div>
+                               
+                                <div class="mb-3">
+                                  <label for="manufacturerbrand">Date Titularisation</label>
+                                  <input
+                                    id="manufacturerbrand"
+                                    [value]="fiche.dat_tit"
+                                    name="manufacturerbrand"
+                                    type="text"
+                                    class="form-control"
+                                  />
+                                </div>
+  
+                                  <div  *ngFor="let item of fiche.rens_pers" class="mb-3">
+                                    <label for="price">Date Fin Fidelité</label>
+                                    <input
+                                      [value]="item.dt_fin_fidelite"
+                                      type="text"
+                                      class="form-control"
+                                    />
+                                    <div class="invalid-feedback"></div>
+                                  </div>
+                               
+  
+  
+  
+  
+  
+                              </div>
+  
+                              <div class="col-sm-6">
+                                <div class="mb-3">
+                                  <label class="control-label">Date d'entrée adminisration</label>
+                                  <input
+                                    id="manufacturerbrand"
+                                    [value]="fiche.dat_ent"
+                                    name="manufacturerbrand"
+                                    type="text"
+                                    class="form-control"
+                                  />
+                                </div>
+                                <div *ngFor="let item of fiche.rens_pers" class="mb-3">
+                                  <label class="control-label">Contrat Fidelité</label>
+                                  <input
+                                  id="manufacturerbrand"
+                                  [value]="item.contrat_fidelite"
+                                  name="manufacturerbrand"
+                                  type="text"
+                                  class="form-control"
+                                />
+                                </div>
+                              
+                           
+                            
+  
+  
+                              </div>
+  
+                            </div>
+                            <div class="d-flex flex-wrap gap-2 mt-2">
+  
+  
+                            </div>
+                          </form>
+
+                          <div class="col-sm-6 col-md-4 col-xl-3">
+                            <div class="my-4 text-center">
+                             
+                              <!-- Small modal -->
+                             <!--  <button type="button" class="btn btn-primary" (click)="smallModal(smallDataModal)">Small
+                                modal</button> -->
+                            </div>
+                          </div>
+
+                          <!-- <ng-template #smallDataModal let-modal>
+                            <div class="modal-header">
+                              <h5 class="modal-title mt-0">recherche</h5>
+                              <button type="button" class="btn-close" (click)="modal.dismiss('Cross click')" aria-hidden="true"></button>
+                            </div>
+                            <div class="modal-body">
+                              <input
+                              id="manufacturerbrand"
+                              [(ngModel)]="z"
+                              name="manufacturerbrand"
+                              type="text"
+                              class="form-control"
+                            />
+                            <button
+                            id="manufacturerbrand"
+                          (click)="getpers()"
+                            type="submit"
+                            class="btn btn-primary"
+                       >chercher</button>
+                         
+                            </div>
+                          </ng-template>
+   -->
+                      
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- end row -->
+                </div>
+                <!-- container-fluid -->
+              </ng-template>
+            </li>
+            <li [ngbNavItem]="2">
+              <a ngbNavLink>
+                <i class="bx bx-notepad
+                d-block check-nav-icon mt-4 mb-2"></i>
+                <p class="fw-bold mb-4">Pointage</p>
+              </a>
+              <ng-template ngbNavContent>
+                <div class="container-fluid">
+                    <!-- start page title -->
+                 
+                    <!-- end page title -->
+    
+                    <div class="row">
+                      <div class="col-12">
+                        <div class="card">
+                          <div class="card-body">
+                            <h1 class="card-title">Consultation Employee </h1> <h4 style=color:#2a3042> Matricule: {{perso11.mat_pers}}</h4>
+                            <p class="card-title-desc"> Information </p>
+    
+                            <form>
+                              <div class="row">
+                                <div class="col-sm-6">
+                                  <div  *ngFor="let item of fiche.rens_pers"class="mb-3">
+                                    <label for="productname"> Régime Travail	</label>
+                                    <input
+                                    value={{item.regime_trav}}
+                                      id="productname"
+                                      name="productname"
+                                      type="text"
+                                      class="form-control"
+                                    />
+                                  </div>
+                                  <div *ngFor="let item of fiche.rens_pers" class="mb-3">
+                                    <label for="manufacturername"> Début Cycle	</label>
+                                    <input
+                                    value={{item.deb_cycle}}
+                                      id="manufacturername"
+                                      name="manufacturername"
+                                      type="text"
+                                      class="form-control"
+                                    />
+                                  </div>
+                                  <div *ngFor="let item of fiche.rens_pers" class="mb-3">
+                                    <label for="manufacturerbrand">Code Regime	</label>
+                                    <input
+                                      id="manufacturerbrand"
+                                      value={{item.cod_reg}} name="manufacturerbrand"
+                                      type="text"
+                                      class="form-control"
+                                    />
+                                  </div>
+                                  <div *ngFor="let item of fiche.rens_pers" class="mb-3">
+                                    <label for="manufacturerbrand">Code Regime Congé	</label>
+                                    <input
+                                      id="manufacturerbrand"
+                                      value={{item.reg_cng}} name="manufacturerbrand"
+                                      type="text"
+                                      class="form-control"
+                                    />
+                                  </div>
+    
+                                    <div *ngFor="let item of fiche.rens_pers" class="mb-3">
+                                      <label for="price">Regime Heure
+                                      </label>
+                                      <input
+                                      value={{item.regime_heur}}
+                                        type="text"
+                                        class="form-control"
+                                      />
+                                      <div class="invalid-feedback"></div>
+                                    </div>
+                                    <div *ngFor="let item of fiche.adresses_personnel" class="mb-3">
+                                      <label for="manufacturerbrand">Signature</label>
+                                      <input
+                                        id="manufacturerbrand"
+                                        value={{item.signature}}
+                                        name="manufacturerbrand"
+                                        type="text"
+                                        class="form-control"
+                                      />
+                                    </div>
+    
+    
+    
+    
+    
+    
+                                </div>
+    
+                                <div class="col-sm-6">
+                                  <div   *ngFor="let item of fiche.rens_pers" class="mb-3">
+                                    <label for="price">
+                                      Pelérinage                                </label>
+                                    <input
+                                    *ngIf="item.code_pelerinage=='N' "
+                                      type="text"
+                                      class="form-control"
+                                      value="Non"
+                                    />
+                                    <input
+                                    *ngIf="item.code_pelerinage=='O' "
+                                      type="text"
+                                      class="form-control"
+                                      value="Oui"
+                                    />
+                                    <input
+                                    *ngIf="item.code_pelerinage==null "
+                                      type="text"
+                                      class="form-control"
+                                      value=""
+                                    />
+                                    <div class="invalid-feedback"></div>
+                                  </div>
+                                  <div *ngFor="let item of fiche.rens_pers" class="mb-3">
+                                    <label class="control-label"> Fin Cycle
+                                    </label>
+                                    <input
+                                    value={{item.fin_cycle}}
+                                    id="manufacturerbrand"
+                                    name="manufacturerbrand"
+                                    type="text"
+                                    class="form-control"
+                                  />
+                                  </div>
+                                  <div *ngFor="let item of fiche.rens_pers" class="mb-3">
+                                    <label for="price">Régime
+                                    </label>
+                                    <input
+                                    value={{item.lib_regime}}
+                                      type="text"
+                                      class="form-control"
+                                    />
+                                    <div class="invalid-feedback"></div>
+                                  </div>
+                                  <div *ngFor="let item of fiche.rens_pers" class="mb-3">
+                                    <label for="price">Régime Congé
+                                    </label>
+                                    <input
+                                    value={{item.lib_regimecng}}
+                                      type="text"
+                                      class="form-control"
+                                    />
+                                    <div class="invalid-feedback"></div>
+                                  </div>
+                                  <div *ngFor="let item of fiche.rens_pers" class="mb-3">
+                                    <label for="manufacturerbrand">Pointe
+                                    </label>
+    
+                                    <input
+                                    *ngIf="item.pointe=='O'" value="Oui"
+                                    value="Oui"
+                                      id="manufacturerbrand"
+                                      name="manufacturerbrand"
+                                      type="text"
+                                      class="form-control"
+                                    />
+                                    <input
+                                    *ngIf="item.pointe=='N'" value="Non"
+                                      id="manufacturerbrand"
+                                      name="manufacturerbrand"
+                                      type="text"
+                                      class="form-control"
+                                    />
+                                    <input
+                                    *ngIf="item.pointe==null" value=""
+                                      id="manufacturerbrand"
+                                      name="manufacturerbrand"
+                                      type="text"
+                                      class="form-control"
+                                    />
+                                  </div>
+    
+    
+    
+                                </div>
+    
+                              </div>
+                              <div class="d-flex flex-wrap gap-2 mt-2">
+    
+    
+                              </div>
+                            </form>
+                          </div>
+                        </div>
+    
+                        <div class="card">
+                          <div class="card-body">
+                            <h4 class="card-title">Pointage</h4>
+                            <p class="card-title-desc">Les informations ci-dessous</p>
+    
+                            <table class="table">
+                                <thead>
+                                  <tr>
+                                  
+                                    <th scope="col">Rue 2éme langue</th>
+                                    <th scope="col">Rue</th>
+                                    <th scope="col">Gouvernorat</th>
+                                    <th scope="col">Telephone</th>
+                                    <th scope="col">Adresse electonique</th>
+
+
+                                  </tr>
+                                </thead>
+                                <tbody>
+                                  <tr *ngFor="let item of fiche.adresses_personnel">
+                                    <td>{{item.rue}}</td>
+                                    <td>{{item.rue_a}}</td>
+                                    <td>{{item.tel_pers}}</td>
+                                    <td>{{item.adr_electronique}}</td>
+
+                                  </tr></tbody>
+                                
+                                
+                                
+                                </table>                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- end row -->
+                  </div>
+              
+  
+              </ng-template>
+            </li>
+            <li [ngbNavItem]="3">
+              <a ngbNavLink>
+                <i class="bx bx-badge-check d-block check-nav-icon mt-4 mb-2"></i>
+                <p class="fw-bold mb-4">Mode de Payement</p>
+
+              </a>
+              <ng-template ngbNavContent>
+                <div class="card">
+                  <div class="card-body">
+                    <h1 class="card-title">Consultation Employee </h1> <h4 style=color:#2a3042> Matricule: {{perso11.mat_pers}}</h4>
+
+                    <div class="card shadow-none border mb-0">
+                      <div class="card-body">
+                        <table    class="table">
+                          <thead>
+                            <tr>
+                              <th scope="col">Bullettin	</th>
+                              <th scope="col">Libelle	</th>
+                              <th scope="col">Mode de payement	</th>
+                              <th scope="col">Date	</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr   *ngFor="let emp  of fiche.mode_payement " (click)="action(emp.cod_typ_bul)">
+                              
+                              <td  >{{emp.cod_typ_bul}}</td>
+                              <td>{{emp.lib_bul}}</td>
+                              <td *ngIf="emp.cod_pay=='V'">Virement</td>
+                              <td *ngIf="emp.cod_pay=='E'">Especes</td>
+                              <td>{{emp.date_modp}}</td>
+
+                            </tr>
+                          
+                            
+                              
+                           
+                          
+                          </tbody>
+                        </table>
+                        <table    class="table">
+                            <thead>
+                              <tr>
+                                <th scope="col">Bullettin	</th>
+                                <th scope="col">Libelle	</th>
+                                <th scope="col">Mode de payement	</th>
+                             
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr   *ngFor="let emp  of cpt ">
+                                
+                                <td  >{{emp.cpt_banq_pers}}</td>
+                                <td>{{emp.lib_bul}}</td>
+                                
+                                <td>{{emp.cod_banq}}</td>
+  
+                              </tr>
+                            
+                              
+                                
+                             
+                            
+                            </tbody>
+                          </table>
+                       
+                       
+
+
+  
+                  </div>
+                    </div>
+  
+                  </div>
+                </div>
+              
+              </ng-template>
+            </li>
+            <li [ngbNavItem]="4">
+                <a ngbNavLink>
+                  <i class="bx bx-add-to-queue
+                  -check d-block check-nav-icon mt-4 mb-2"></i>
+                  <p class="fw-bold mb-4">Variables d'octroi et d'indemnité</p>
+                </a>
+                <ng-template ngbNavContent>
+                    <div class="container-fluid">
+                        <!-- start page title -->
+        
+                        <!-- end page title -->
+        
+                        <div class="row">
+                          <div class="col-12">
+                            <div class="card">
+                              <div class="card-body">
+                                <h1 class="card-title">Consultation Employee </h1> <h4 style=color:#2a3042> Matricule: {{perso11.mat_pers}}</h4>
+                                <p class="card-title-desc"> information </p>
+        
+                                <form>
+                                  <div class="row">
+                                    <div class="col-sm-6">
+                                      <div *ngFor="let item of fiche.rens_pers" class="mb-3">
+                                        <label for="productname">Droit lait</label>
+                                        <input
+                                        value={{item.droit_lait}}
+                                          id="productname"
+                                          name="productname"
+                                          type="text"
+                                          class="form-control"
+                                        />
+                                      </div>
+                                      <div *ngFor="let item of fiche.rens_pers" class="mb-3">
+                                        <label for="manufacturername">Logement</label>
+                                        <input
+                                        value={{item.pers_clog}}
+                                          id="manufacturername"
+                                          name="manufacturername"
+                                          type="text"
+                                          class="form-control"
+                                        />
+                                      </div>
+                                      <div  *ngFor="let item of fiche.rens_pers" class="mb-3">
+                                        <label for="manufacturerbrand">Chaufage</label>
+                                        <input
+                                          id="manufacturerbrand"
+                                          value={{item.code_cchauf}}
+                                          name="manufacturerbrand"
+                                          type="text"
+                                          class="form-control"
+                                        />
+                                      </div>
+        
+                                        <div *ngFor="let item of fiche.rens_pers" class="mb-3">
+                                          <label for="price">Eau</label>
+                                          <input
+                                          value={{item.pers_ceau}}
+                                            type="text"
+                                            class="form-control"
+                                          />
+                                          <div class="invalid-feedback"></div>
+                                        </div>
+                                        <div  *ngFor="let item of fiche.rens_pers" class="mb-3">
+                                          <label for="manufacturerbrand">Service Domestique	</label>
+                                          <input
+                                            id="manufacturerbrand"
+                                            value={{item.ind_domest}}
+                                            name="manufacturerbrand"
+                                            type="text"
+                                            class="form-control"
+                                          />
+                                        </div>
+                                        <div  *ngFor="let item of fiche.rens_pers" class="mb-3">
+                                            <label for="manufacturerbrand">Residence	</label>
+                                            <input
+                                              id="manufacturerbrand"
+                                              value={{item.code_residence}}
+                                              name="manufacturerbrand"
+                                              type="text"
+                                              class="form-control"
+                                            />
+                                          </div>
+                                          <div  *ngFor="let item of fiche.rens_pers" class="mb-3">
+                                            <label for="manufacturerbrand">Electricité	</label>
+                                            <input
+                                              id="manufacturerbrand"
+                                              value={{item.pers_celec}} 
+                                              name="manufacturerbrand"
+                                              type="text"
+                                              class="form-control"
+                                            />
+                                          </div>
+
+        
+        
+        
+        
+        
+                                    </div>
+        
+                                    <div class="col-sm-6">
+                                      <div *ngFor="let item of fiche.rens_pers" class="mb-3">
+                                        <label class="control-label">Libellé Droit Lait</label>
+                                        <input
+                                          id="manufacturerbrand"
+                                          value={{item.lib_lait}}
+                                          name="manufacturerbrand"
+                                          type="text"
+                                          class="form-control"
+                                        />
+                                      </div>
+                                      <div  *ngFor="let item of fiche.rens_pers" class="mb-3">
+                                        <label class="control-label">Libellé Logement</label>
+                                        <input
+                                        id="manufacturerbrand"
+                                        value={{item.lib_clog}}
+                                        name="manufacturerbrand"
+                                        type="text"
+                                        class="form-control"
+                                      />
+                                      </div>
+                                      <div *ngFor="let item of fiche.rens_pers" class="mb-3">
+                                        <label for="manufacturerbrand">Libellé Chaufage
+                                        </label>
+                                        <input
+                                          id="manufacturerbrand"
+                                          value={{item.lib_CCHAUF}}
+                                          name="manufacturerbrand"
+                                          type="text"
+                                          class="form-control"
+                                        />
+                                      </div>
+                                      <div *ngFor="let item of fiche.rens_pers" class="mb-3">
+                                        <label for="manufacturerbrand">Libellé Eau</label>
+                                        <input
+                                          id="manufacturerbrand"
+                                          value={{item.lib_eau}}
+                                          name="manufacturerbrand"
+                                          type="text"
+                                          class="form-control"
+                                        />
+                                      </div>
+                                      <div *ngFor="let item of fiche.rens_pers" class="mb-3">
+                                        <label for="manufacturerbrand">Libellé Service Domestique</label>
+                                        <input
+                                          id="manufacturerbrand"
+                                          value={{item.lib_dom}} 
+                                          name="manufacturerbrand"
+                                          type="text"
+                                          class="form-control"
+                                        />
+                                      </div>
+                                      <div *ngFor="let item of fiche.rens_pers" class="mb-3">
+                                        <label for="manufacturerbrand">Libellé Residence</label>
+                                        <input
+                                          id="manufacturerbrand"
+                                          value={{item.lib_residence}}
+                                          name="manufacturerbrand"
+                                          type="text"
+                                          class="form-control"
+                                        />
+                                      </div>
+                                      <div *ngFor="let item of fiche.rens_pers" class="mb-3">
+                                        <label for="manufacturerbrand">Libellé Electricité</label>
+                                        <input
+                                          id="manufacturerbrand"
+                                          value={{item.lib_celec}}
+                                          name="manufacturerbrand"
+                                          type="text"
+                                          class="form-control"
+                                        />
+                                      </div>
+        
+        
+                                    </div>
+        
+                                  </div>
+                                  <div class="d-flex flex-wrap gap-2 mt-2">
+        
+        
+                                  </div>
+                                </form>
+                              </div>
+                            </div>
+        
+                            <div class="card">
+                              <div class="card-body">
+        
+        
+                                <form>
+                                  <div class="row">
+                                    <div class="col-sm-6">
+                                      <div  *ngFor="let item of fiche.rens_pers" class="mb-3">
+                                        <label for="metatitle">Voiture</label>
+                                        <input
+                                        value={{item.pers_cvoit}} 
+                                          id="metatitle"
+                                          name="productname"
+                                          type="text"
+                                          class="form-control"
+                                        />
+                                      </div>
+                                      
+                                      <div  *ngFor="let item of fiche.rens_pers" class="mb-3">
+                                        <label for="metakeywords">Baréme de Transport</label>
+                                        <input
+                                          id="metakeywords"
+                                          value={{item.cod_bareme}}
+                                          name="manufacturername"
+                                          type="text"
+                                          class="form-control"
+                                        />
+                                      </div>
+                                      <div  *ngFor="let item of fiche.rens_pers" class="mb-3">
+                                        <label for="metakeywords">Uniform</label>
+                                        <input
+                                          id="metakeywords"
+                                          value={{item.uniform}}
+                                          name="manufacturername"
+                                          type="text"
+                                          class="form-control"
+                                        />
+                                      </div>
+                                    </div>
+        
+                                    <div class="col-sm-6">
+                                      <div *ngFor="let item of fiche.rens_pers"  class="mb-3">
+                                        <label for="metadescription">Libélle Voiture
+                                        </label>
+                                        <input
+                                        value={{item.lib_cvoit}}
+                                        id="metakeywords"
+                                        value="Oui"
+                                        name="manufacturername"
+                                        type="text"
+                                        class="form-control"
+                                      />
+                                      </div>
+                                    
+                                      
+                                      <div *ngFor="let item of fiche.rens_pers" class="mb-3">
+                                        <label for="metakeywords">Nb Mois Bonification</label>
+                                        <input 
+                                          id="metakeywords"
+                                          value={{item.iep_mojhd_chehid}}
+                                          name="manufacturername"
+                                          type="text"
+                                          class="form-control"
+                                        />
+                                       
+                               
+                                   
+                                      </div>
+                                      <div *ngFor="let item of fiche.rens_pers"  class="mb-3">
+                                        <label for="metadescription">Uniform
+                                        </label>
+                                        <input
+                                        value={{item.lib_uniform}} 
+                                        id="metakeywords"
+                                        value="Oui"
+                                        name="manufacturername"
+                                        type="text"
+                                        class="form-control"
+                                      />
+                                      </div>
+                                      <div *ngFor="let item of fiche.rens_pers"  class="mb-3">
+                                        <label for="metadescription">Fils Moujahid/chahid
+                                        </label>
+                                        <input
+                                        value={{item.f_mojhd_chehid}}  id="metakeywords"
+                                       
+                                        name="manufacturername"
+                                        type="text"
+                                        class="form-control"
+                                      />
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <div class="d-flex flex-wrap gap-2">
+        
+                                  </div>
+                                </form>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <!-- end row -->
+                      </div>
+                      <!-- container-fluid -->
+                    </ng-template>
+                  </li>
+                  <li [ngbNavItem]="6">
+                    <a ngbNavLink>
+                      <i class="bx bx-file-blank
+                      d-block check-nav-icon mt-4 mb-2"></i>
+                      <p class="fw-bold mb-4">Experiences Professionnel</p>
+                    </a>
+                    <ng-template ngbNavContent>
+                        <div class="container-fluid">
+                            <!-- start page title -->
+            
+                            <!-- end page title -->
+            
+                            <div class="row">
+                              <div class="col-12">
+                                <div class="card">
+                                  <div class="card-body">
+                                    <h1 class="card-title">Consultation Employee </h1> <h4 style=color:#2a3042> Matricule: {{perso11.mat_pers}}</h4>
+                                    <p class="card-title-desc"> Information </p>
+                                    <table class="table">
+                                        <thead>
+                                          <tr>
+                                            <th scope="col">Nom Etablissement</th>
+                                            <th scope="col">Etablissement</th>
+                                            <th scope="col">Fonction</th>
+                                            <th scope="col">Fonction Equivalant</th>
+                                            <th scope="col">Date Debut</th>
+
+                                            <th scope="col">Date Fin</th>
+                                            <th scope="col">Année</th>
+                                            <th scope="col">Mois</th>
+                                            <th scope="col">Jour</th>
+
+
+
+
+
+                                          </tr>
+                                        </thead>
+                                        <tbody>
+                                          <tr *ngFor="let item of fiche.etab">
+                                            <td>{{item.etablissement}}</td>
+                                            <td>{{item.etablissement}}</td>
+                                            <td>{{item.emploi}}</td>
+                                            <td>{{item.fonct_corr}}</td>
+
+
+                                            <td>{{item.dat_emb}}</td>
+
+                                            <td>{{item.dat_fin}}</td>
+
+                                            <td>{{item.wannee}}</td>
+                                            <td>{{item.wmois}}</td>
+                                            <td>{{item.wjours}}</td>
+
+
+                                          </tr>
+                                         
+                                        
+                                        </tbody>
+                                      </table>
+                                   <!--<app-exprienceprof></app-exprienceprof>-->
+                                  </div>
+                                </div>
+            
+                                
+                              </div>
+                            </div>
+                            <!-- end row -->
+                          </div>
+                          <!-- container-fluid -->
+                        </ng-template>
+                      </li>
+                      <li [ngbNavItem]="5">
+                        <a ngbNavLink>
+                          <i class="bx bx-italic
+                          -check d-block check-nav-icon mt-4 mb-2"></i>
+                          <p class="fw-bold mb-4">Indemnité</p>
+                        </a>
+                        <ng-template ngbNavContent>
+                            <div class="container-fluid">
+                                <!-- start page title -->
+                
+                                <!-- end page title -->
+                
+                                <div class="row">
+                                  <div class="col-12">
+                                    <div class="card">
+                                      <div class="card-body">
+                                        <h1 class="card-title">Consultation Employee </h1> <h4 style=color:#2a3042> Matricule: {{perso11.mat_pers}}</h4>
+                                        <p class="card-title-desc"> Information </p>
+                
+                                        <table class="table">
+                                            <thead>
+                                              <tr>
+                                                <th scope="col">Abreviation fixe</th>
+                                                <th scope="col">Libelle</th>
+                                                <th scope="col">Montant</th>
+                                                <th scope="col">Date Indemnité</th>
+                                                <th scope="col">Date fin Indemnité</th>
+    
+                                                <th scope="col">Numero niveau</th>
+                                                <th scope="col">Code niveau</th>
+                                                <th scope="col">Type rubrique</th>
+    
+    
+    
+    
+    
+                                              </tr>
+                                            </thead>
+                                            <tbody>
+                                              <tr *ngFor="let item of fiche.etab">
+                                                <td>{{item.abrv_fixe}}</td>
+                                                <td>{{item.lib_ind}}</td>
+                                                <td>{{item.montant}}</td>
+                                                <td>{{item.date_ind}}</td>
+    
+    
+                                                <td>{{item.date_ind_fin}}</td>
+    
+                                                <td>{{item.num_niv}}</td>
+    
+                                                <td>{{item.cod_niv}}</td>
+                                                <td>{{item.type_par}}</td>
+    
+    
+                                              </tr>
+                                             
+                                            
+                                            </tbody>
+                                          </table>
+                                      </div>
+                                    </div>
+                
+                                    
+                                  </div>
+                                </div>
+                                <!-- end row -->
+                              </div>
+                              <!-- container-fluid -->
+                            </ng-template>
+                          </li>
+          </ul>
+        </div>
+        <div class="col-lg-10">
+          <div [ngbNavOutlet]="nav"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  

@@ -30,7 +30,7 @@ export class ComptepersComponent implements OnInit {
 
     this.columnDefs = [
       {
-        headerName: "code type bulletin",
+        headerName: "Code type bulletin",
         field: "date_modp",
         editable: true,
         resizable: true,
@@ -40,7 +40,7 @@ export class ComptepersComponent implements OnInit {
         width: 200,
       },
       {
-        headerName: "Compte banque personnel",
+        headerName: "Compte bancaire perso.",
         field: "lib_bul",
         editable: true,
         resizable: true,
@@ -64,7 +64,7 @@ export class ComptepersComponent implements OnInit {
        
       },
       {
-        headerName: "Code Banque",
+        headerName: "Code banque",
         field: "cod_typ_bul",
         editable: true,
         resizable: true,
@@ -96,7 +96,7 @@ export class ComptepersComponent implements OnInit {
   }
   columnDefss = [
     {
-      headerName: "code type bulletin",
+      headerName: "Code type bulletin",
       field: "cod_typ_bul",
       editable: true,
       resizable: true,
@@ -130,7 +130,7 @@ export class ComptepersComponent implements OnInit {
      
     },
     {
-      headerName: "Code Banque",
+      headerName: "Code banque",
       field: "cod_banq",
       editable: true,
       resizable: true,

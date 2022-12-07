@@ -32,6 +32,7 @@ const routes: Routes = [
   { path: 'EspaceChef', loadChildren: () => import('./EspaceChef/chef.module').then(m => m.ChefModule) },
   { path: 'EspaceRh', loadChildren: () => import('./EspaceRh/Chef.module').then(m => m.RhModule) },
 
+  { path: 'EspaceCollaborateur', loadChildren: () => import('./consultcol/ConsultCol.module').then(m => m.ConsultColModule) },
 
 
   { path: 'employe', loadChildren: () => import('./Employe/Employe.module').then(m => m.EmployeModule) },

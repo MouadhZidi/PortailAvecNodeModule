@@ -13,6 +13,7 @@ import { DROPZONE_CONFIG } from 'ngx-dropzone-wrapper';
 import { DropzoneConfigInterface } from 'ngx-dropzone-wrapper';
 import { NgSelectModule } from '@ng-select/ng-select';
 import { ConsltoppoRoutingModule } from './consltoppo-routing.module';
+import { OpppositionRhComponent } from './oppposition-rh/oppposition-rh.component';
 
 
 
@@ -25,6 +26,8 @@ const config: DropzoneConfigInterface = {
 @NgModule({
   // tslint:disable-next-line: max-line-length
   declarations: [
+  
+    OpppositionRhComponent
   ],
   imports: [
     CommonModule,

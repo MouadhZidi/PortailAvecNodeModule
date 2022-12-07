@@ -20,7 +20,7 @@ export class ConjointComponent implements OnInit {
   }
   columnDefs = [
     {
-      headerName: "Numero Assurance conjoint",
+      headerName: "Num. assurance conjoint",
       field: "num_ass_conj",
       editable: true,
       sortable:true,
@@ -32,7 +32,7 @@ export class ConjointComponent implements OnInit {
   
     },
     {
-      headerName: "Numéro Famille",
+      headerName: "Numéro famille",
       field: "num_fam",
       editable: true,
       resizable: true,
@@ -72,7 +72,7 @@ export class ConjointComponent implements OnInit {
     },
     
     {
-      headerName: "Date de Naissance",
+      headerName: "Date de naissance",
       field: "dat_naiss",
       filter: "agDateColumnFilter",
       width:200,
@@ -111,7 +111,7 @@ export class ConjointComponent implements OnInit {
     },
 
     {
-      headerName: "Date Cin",
+      headerName: "Date cin",
       field: "dat_cin",
       filter: "agDateColumnFilter",
       floatingFilter: true,
@@ -188,7 +188,7 @@ export class ConjointComponent implements OnInit {
 
 
     {
-      headerName: "Prenom 2 eme langue",
+      headerName: "Prenom 2éme langue",
       field: "prenom_a",
       editable: true,
       filter: true,

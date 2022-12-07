@@ -25,7 +25,7 @@ export class ExprienceprofComponent implements OnInit {
    
 
     {
-      headerName: "Nom Etablissement",
+      headerName: "Nom etablissement",
       field: "etablissement",
       editable: true,
       resizable: true,
@@ -45,7 +45,7 @@ export class ExprienceprofComponent implements OnInit {
       width: 200,
       },
       {
-        headerName: "fonction ",
+        headerName: "Fonction ",
         field: "emploi",
         editable: true,
         resizable: true,
@@ -55,7 +55,7 @@ export class ExprienceprofComponent implements OnInit {
         width: 150,
       },
     {
-      headerName: "fonction equivalant",
+      headerName: "Fonction equivalant",
       field: "fonct_corr",
       editable: true,
       resizable: true,
@@ -64,7 +64,7 @@ export class ExprienceprofComponent implements OnInit {
       floatingFilter: true,
       width: 150,
     },
-    { headerName: "date debut",
+    { headerName: "Fate debut",
       field: "dat_emb",
       filter: "agDateColumnFilter",
       width:140,
@@ -99,7 +99,7 @@ export class ExprienceprofComponent implements OnInit {
       editable: true,
       cellEditor: "primeCellEditor",
     }, {
-      headerName: "date fin",
+      headerName: "Date fin",
 
       field: "dat_fin",
       filter: "agDateColumnFilter",
