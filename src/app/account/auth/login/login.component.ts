@@ -64,7 +64,7 @@ if (data){
    Swal.fire({
   position: 'top-end',
   icon: 'success',
-  title: 'Bienvenu à notre portail RH',
+  title: 'Bienvenu à notre espace '+this.tokenStorage.getUser().role_portail,
   showConfirmButton: false,
   timer: 3000
 });

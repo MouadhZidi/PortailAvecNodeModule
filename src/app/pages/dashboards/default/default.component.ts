@@ -36,7 +36,7 @@ export class DefaultComponent implements OnInit {
   monthlyEarningChart: ChartType;
   transactions: Array<[]>;
   statData: Array<[]>;
-
+role=this.token.getUser().role_portail
   isActive: string;
 
   @ViewChild('content') content;

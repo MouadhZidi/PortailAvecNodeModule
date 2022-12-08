@@ -24,6 +24,7 @@
                             <div class="text-primary p-3">
                                 <h5 class="text-primary">Bienvenue !</h5>
                                 <p>Tableau de bord portail ArabSoft</p>
+                                <h3 *ngIf="role">Bienvenu dans l'espace : {{role}}</h3>
                             </div>
                         </div>
                         <div class="col-5 align-self-end">
@@ -39,6 +40,8 @@
                             </div>
                             <h5>{{pers.nom_pers}}  {{pers.pren_pers}}</h5>
                             <p >{{pers.lib_adm_tech}}</p>
+                            <h3 *ngIf="role">Role: {{role}}</h3>
+                           
                         </div>
 
                         <div class="col-sm-8">
